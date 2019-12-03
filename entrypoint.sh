@@ -1,4 +1,6 @@
 #!/bin/sh
+#Enable job control
+set -m
 #Print OS details
 echo "************OS Details************"
 cat /etc/os-release
@@ -10,7 +12,7 @@ echo "***********************************"
 echo "Running server"
 
 elasticsearch &
-
+ES_PID=$!
 # wait server to bootstrap
 echo "Waiting...."
 sleep 60
@@ -21,3 +23,7 @@ curl 127.0.0.1:9200
 
 # Run load template script
 python load_templates.py
+
+# Bring Elastic server to forground
+echo "Bring Elastic Server to forground"
+fg
