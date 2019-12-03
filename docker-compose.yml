@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+  routier-elasticsearch:
+    container_name: routier-elasticsearch
+    build: .
+    volumes:
+      - ./entrypoint.sh:/usr/share/elasticsearch/entrypoint.sh
+      - ./load_templates.py:/usr/share/elasticsearch/load_templates.py
+    ports:
+      - 9200:9200
