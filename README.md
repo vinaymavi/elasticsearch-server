@@ -55,3 +55,8 @@ Place above JSON format files to
 `/usr/share/elasticsearch/templates`
 
 Folder and all `JSON` file will be loaded automatically to the server.
+
+
+### Docker Hub 
+
+Link - https://hub.docker.com/repository/docker/routier/elasticsearch-server
