@@ -11,4 +11,5 @@ USER elasticsearch
 WORKDIR /usr/share/elasticsearch
 COPY ./templates templates
 COPY ./entrypoint.sh .
+COPY ./load_templates.py .
 ENTRYPOINT [ "/usr/share/elasticsearch/entrypoint.sh" ]
