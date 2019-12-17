@@ -3,9 +3,22 @@
 import os
 import json
 import requests;
+import time
 
 TEMPLATE_DIR = "/usr/share/elasticsearch/templates";
 HOST = "http://127.0.0.1:9200"
+
+print("***********Importing start************");
+# Check for Elastic Search server up and running.
+while True:
+    try:
+        resp = requests.get(HOST);
+    except Exception as e:
+        time.sleep(30);
+        print("Waiting to server start...")
+        continue;
+    break;
+
 # Read json files
 files = []
 for r, d, f in os.walk(TEMPLATE_DIR):

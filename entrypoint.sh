@@ -13,13 +13,6 @@ echo "Running server"
 
 elasticsearch &
 ES_PID=$!
-# wait server to bootstrap
-echo "Waiting...."
-sleep 60
-
-# print Elastic Server details
-echo "********* Elastic Server Details **********"
-curl 127.0.0.1:9200
 
 # Run load template script
 python load_templates.py
