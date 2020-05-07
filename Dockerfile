@@ -1,5 +1,5 @@
 #Load Elastic search image
-FROM docker.elastic.co/elasticsearch/elasticsearch:6.8.5
+FROM docker.elastic.co/elasticsearch/elasticsearch:6.8.8
 #Install pip
 RUN yum install python-devel -y
 RUN curl -O https://bootstrap.pypa.io/get-pip.py
